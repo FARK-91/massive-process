@@ -1,0 +1,155 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/progress-bar.css">
+    <link rel="stylesheet" type="text/css" href="css/introjs.css" />
+    <title>Proceso Masivo</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header__left-content">
+            <a href="/"><img src="images/home.png" alt="Home"></a>
+            <img class="header__logo" src="images/brand_logo_header.png" alt="logo">
+        </div>
+        <div class="header__right-content">
+            <a href="/logout.jsp"><img src="images/arrow.png" alt="Exit"></a>
+        </div>
+    </header>
+    <!--Seccion para datos en cola-->
+    <section class="queue__section">
+        <div class="queue__section--header">
+            <h2><span id="queue__section--header">Archivos en cola</span><a href="#" id="queue__update"><span class="glyphicon glyphicon-refresh"></span></a></h2>
+            <label for="customerFile">Subir Archivo</label>
+            <input class="col-md-6" type="file" id="customerFile" accept='text/plain' style="max-width: 50%;" onchange="buttonSearch()"/>
+        </div>
+        <div class="queue__section--element" id="queueItem1">
+            <h4>Lote<a href="#"><span class="glyphicon glyphicon-menu-down"></span></a></h4>
+        </div>
+        <div class="queue__section--element" id="queueItem2">
+            <h4>Archivo<a href="#"><span class="glyphicon glyphicon-menu-down"></span></a></h4>
+        </div>
+        <div class="queue__section--element" id="queueItem3">
+            <h4>Usuario<a href="#"><span class="glyphicon glyphicon-menu-down"></span></a></h4>
+        </div>
+        <div class="queue__section--element" id="queueItem4">
+            <h4>Fecha<a href="#"><span class="glyphicon glyphicon-menu-down"></span></a></h4>
+        </div>
+        <div class="queue__section--element" id="queueItem5">
+            <h4>Hora<a href="#"><span class="glyphicon glyphicon-menu-down"></span></a></h4>
+        </div>
+        <div class="queue__section--element" id="queueItem6">
+            <h4>Tamaño<a href="#"><span class="glyphicon glyphicon-menu-down"></span></a></h4>
+        </div>
+        <div class="queue__section--element" id="queueItem7">
+            <h5></h5>
+        </div>
+    </section>
+    <section>
+        <div id="queue__data">
+            <p></p>
+        </div>
+    </section>
+    <!--Seccion para datos en proceso-->
+    <section class="processing__section">
+        <div class="processing__section--header">
+            <h2><span id="processing__section--header">Archivos en proceso</span><a href="#" id="processing__update"><span class="glyphicon glyphicon-refresh"></span></a></h2>
+        </div>
+        <div class="queue__section--element" id="processingItem1">
+            <h4>Lote<a href="#"><span class="glyphicon glyphicon-menu-down"></span></a></h4>
+        </div>
+        <div class="queue__section--element" id="processingItem2">
+            <h4>Archivo<a href="#"><span class="glyphicon glyphicon-menu-down"></span></a></h4>
+        </div>
+        <div class="queue__section--element" id="processingItem3">
+            <h4>Usuario<a href="#"><span class="glyphicon glyphicon-menu-down"></span></a></h4>
+        </div>
+        <div class="queue__section--element" id="processingItem4">
+            <h4>Fecha<a href="#"><span class="glyphicon glyphicon-menu-down"></span></a></h4>
+        </div>
+        <div class="queue__section--element" id="processingItem5">
+            <h4>Hora<a href="#"><span class="glyphicon glyphicon-menu-down"></span></a></h4>
+        </div>
+        <div class="queue__section--element" id="processingItem6">
+            <h4>Tamaño<a href="#"><span class="glyphicon glyphicon-menu-down"></span></a></h4>
+        </div>
+        <div class="queue__section--element" id="processingItem7">
+            <h5></h5>
+        </div>
+    </section>
+    <section>
+        <div id="processing__data">
+            <p></p>
+        </div>
+    </section>
+    <!--Seccion para datos procesados-->
+    <section class="processed__section">
+        <div class="processed__section--header">
+            <h2><span id="processed__section--header">Archivos procesados</span><a href="#" id="processed__update"><span class="glyphicon glyphicon-refresh"></span></a></h2>
+        </div>
+        <div class="queue__section--element" id="processedItem1">
+            <h4>Lote<a href="#"><span class="glyphicon glyphicon-menu-down"></span></a></h4>
+        </div>
+        <div class="queue__section--element" id="processedItem2">
+            <h4>Archivo<a href="#"><span class="glyphicon glyphicon-menu-down"></span></a></h4>
+        </div>
+        <div class="queue__section--element" id="processedItem3">
+            <h4>Usuario<a href="#"><span class="glyphicon glyphicon-menu-down"></span></a></h4>
+        </div>
+        <div class="queue__section--element" id="processedItem4">
+            <h4>Fecha<a href="#"><span class="glyphicon glyphicon-menu-down"></span></a></h4>
+        </div>
+        <div class="queue__section--element" id="processedItem5">
+            <h4>Hora<a href="#"><span class="glyphicon glyphicon-menu-down"></span></a></h4>
+        </div>
+        <div class="queue__section--element" id="processedItem6">
+            <h4>Tamaño<a href="#"><span class="glyphicon glyphicon-menu-down"></span></a></h4>
+        </div>
+        <div class="queue__section--element" id="processedItem7">
+            <h5></h5>
+        </div>
+    </section>
+    <section>
+        <div id="processed__data">
+            <p></p>
+        </div>
+    </section>
+
+    <div class="overlay" id="overlay">
+    </div>
+
+    <div class="progressBar" id="progressBar">
+        <div class="progressBar-content" id="progressBar-content">0%</div>
+    </div>
+
+    <script type="text/javascript" src="scripts/customer-search.js"></script>
+    <script type="text/javascript" src="scripts/intro.js"></script>
+    <!--Librerias para botones que exportan la tabla-->
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.html5.min.js"></script> -->
+    <!-- <script>
+        function buttonSearch(){
+            let file = document.getElementById("customerFile").files[0];
+            document.getElementById("labelSearch").innerHTML = file.name
+        }
+        function buttonUpload(){
+            let file = document.getElementById("uploadFile").files[0];
+            document.getElementById("labelUpload").innerHTML = file.name
+        }
+    </script> -->
+</body>
+</html>

@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body{
+    margin: 0;
+    background-color: #334366;
+    font-family: Roboto,sans-serif;
+    /* font-family: 'Muli' ; */
+}
+
+.header{
+    background-color: #1a1c34;
+    display: flex;
+    justify-content: space-between;
+    height: 56px;
+    padding: 0px 50px;
+}
+
+.header__left-content{
+    display: inherit;
+    align-items: center;
+    color: white;
+}    
+
+.header__left-content a img{
+    max-width: 25px;
+    margin: 0px 25px;
+}
+
+.header__logo{
+    max-width: 100px;
+    margin-right: 20px;
+}
+
+.header__right-content{
+    display: inherit;
+    justify-content: space-between;
+    align-items: center;
+    color: white;   
+}
+
+.header__right-content img{
+    max-width: 25px;
+    margin-left: 10px;
+}
+
+/*Seccion para datos en cola*/
+.queue__section{
+    display: grid;
+    grid-template-rows: 50px auto auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 30px;
+    background-color: white;
+    margin: 12px 12px 0px 12px;
+    border-top-left-radius: 4px 4px;
+    border-top-right-radius: 4px 4px;
+}
+
+.queue__section--header{
+    grid-column: 1 / 8;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: groove ghostwhite;
+}
+
+h2{
+    margin: 8px 0px 0px 12px !important;
+}
+
+h2 > a{
+    color: #E7004C;
+    margin-left: 8px;
+    font-size: 24px;
+}
+
+#queue__section--header{
+    cursor: pointer;
+}
+
+#queue__update{
+    cursor: pointer;
+}
+
+.queue__section--element{
+    display: flex;
+    justify-content: center;
+}
+
+h4 > a{
+    color: lightgray;
+    margin-left: 4px;
+}
+
+p > a{
+    color: #E7004C;
+}
+
+.queue__data{
+    display: grid;
+    grid-template-rows: 50px auto auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 30px;
+    background-color: white;
+    margin: 0px 12px 0px 12px;
+    border-bottom-left-radius: 1px 1px;
+    border-bottom-right-radius: 1px 1px;
+}
+
+/*Seccion para datos en proceso*/
+.processing__section{
+    display: grid;
+    grid-template-rows: 50px auto auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 30px;
+    background-color: white;
+    margin: 12px 12px 0px 12px;
+    border-top-left-radius: 4px 4px;
+    border-top-right-radius: 4px 4px;
+}
+
+.processing__section--header{
+    grid-column: 1 / 8;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: groove ghostwhite;
+}
+
+#processing__section--header{
+    cursor: pointer;
+}
+
+#processing__update{
+    cursor: pointer;
+}
+
+.processing__data{
+    display: grid;
+    grid-template-rows: 50px auto auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 30px;
+    background-color: white;
+    margin: 0px 12px 0px 12px;
+    border-bottom-left-radius: 1px 1px;
+    border-bottom-right-radius: 1px 1px;
+}
+
+/*Seccion para datos procesados*/
+.processed__section{
+    display: grid;
+    grid-template-rows: 50px auto auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 30px;
+    background-color: white;
+    margin: 12px 12px 0px 12px;
+    border-top-left-radius: 4px 4px;
+    border-top-right-radius: 4px 4px;
+}
+
+.processed__section--header{
+    grid-column: 1 / 8;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: groove ghostwhite;
+}
+
+#processed__section--header{
+    cursor: pointer;
+}
+
+#processed__update{
+    cursor: pointer;
+}
+
+.processed__data{
+    display: grid;
+    grid-template-rows: 50px auto auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 30px;
+    background-color: white;
+    margin: 0px 12px 0px 12px;
+    border-bottom-left-radius: 1px 1px;
+    border-bottom-right-radius: 1px 1px;
+}
+
+
+input[type='file']#customerFile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+label[for="customerFile"] {
+    min-width: 175px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 18px;
+    text-overflow: ellipsis;
+    border-radius: 4px;
+    color: #fff;
+    background: #DC3545;
+    border: 1px #DC3545;
+    font-weight: 400;
+    margin: 4px 4px;
+    padding: 8px 8px;
+}
+
+.btn{
+    min-width: 150px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 18px;
+    text-overflow: ellipsis;
+    border-radius: 4px;
+    color: #fff;
+    background: #e50046;
+    border: 1px #e50046;
+    font-weight: 400;
+    margin: 25px 25px;
+    padding: 8px 8px;
+}
+
+#progressBar{
+    display: none;
+}
